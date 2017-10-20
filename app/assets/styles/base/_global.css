@@ -1,0 +1,19 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* the border-box attribute forces webbrowser to honour our declared
+width values */
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: $mainOrange;
+}

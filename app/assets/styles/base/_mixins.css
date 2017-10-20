@@ -1,0 +1,39 @@
+/* Add a mixin that passes styles along only to screens that are larger
+to what we typically consider to be a smartphone size */
+
+/* atSmall is the name we gave our mixin.
+Within our mixin is a media query
+
+MIXIN
+  |_____ @media query
+
+*/
+
+@define-mixin atSmall {
+  @media (min-width: 530px){
+    @mixin-content;
+  }
+}
+
+@define-mixin atMedium {
+  @media (min-width: 800px){
+    @mixin-content;
+  }
+}
+
+@define-mixin atLarge {
+  @media (min-width: 1200px){
+    @mixin-content;
+  }
+}
+
+@define-mixin clearfix {
+  /* This is fake CSS content
+  the &::after selector will add the blank content:"" space
+  after all of the content in the main row div */
+  &::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+}
