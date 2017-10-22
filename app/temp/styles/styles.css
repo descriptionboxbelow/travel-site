@@ -647,6 +647,12 @@ Declaring the image as "block" removes the white lower margin we do not need.
     color: white;
   }
 
+.page-section--testimonials {
+    background: url('/assets/images/testimonials-bg.jpg') top center no-repeat;
+    /* Shrinks or stretchs the image to perfectly cover the containing DIV */
+    background-size: cover;
+  }
+
 .headline {
   font-weight: 300;
   font-size: 1.9rem; /* 46/16 */
@@ -821,8 +827,15 @@ Declaring the image as "block" removes the white lower margin we do not need.
       margin-right: .5rem;
       margin-bottom: 0rem;
       maring-left: 0;
-      display: inline-block
+      display: inline-block;
+      position: relative;
+      top: 0.813rem
+      /* 13/16 */
   }
+  }
+
+.section-title--blue {
+    color: #2f5572;
   }
 
 .feature-item {
@@ -866,4 +879,40 @@ text-align: left;
       margin-top: 1em;
     font-size: 1.875rem
   }
+  }
+
+.testimonial {
+  background-color: rgba(255, 255, 255, .8);
+  padding: 0 1.813rem 1px 1.813rem;
+}
+
+/* 1/16 */
+
+.testimonial__photo {
+    border-radius: 50%;
+    overflow: hidden;
+    height: 160px;
+    width: 160px;
+    margin: 0 auto -80px auto;
+    position: relative;
+    top: -80px;
+    border: 6px solid rgba(255, 255, 255, .8);
+  }
+
+/* 29/16 */
+
+.testimonial__title {
+    color: #2f5572;
+    text-align: center;
+    font-size: 1.5rem;
+    /* 24/16 */
+    font-weight: 500;
+    margin: 0;
+  }
+
+.testimonial__subtitle {
+    color: #d59541;
+    font-weight: 400;
+    text-align: center;
+    margin: .25rem 0 1rem 0;
   }
