@@ -1,8 +1,13 @@
 .testimonial {
   background-color: rgba(255, 255, 255, .8);
-  padding: 0 1.813rem 1px 1.813rem;
-  /* 29/16 */
-  /* 1/16 */
+  padding: 0 1.125rem 0.063rem 1.125rem;
+  /* 18/16, 1/16, 18/16 */
+  margin-bottom: 6rem;
+  @mixin atLarge {
+    margin-bottom: 0;
+    padding: 0 1.813rem 0.063rem 1.813rem;
+    /* 29/16, 1/16, 29/16 */
+  }
   &__photo {
     border-radius: 50%;
     overflow: hidden;
@@ -26,5 +31,8 @@
     font-weight: 400;
     text-align: center;
     margin: .25rem 0 1rem 0;
+  }
+  &--last {
+    margin-bottom: 0;
   }
 }

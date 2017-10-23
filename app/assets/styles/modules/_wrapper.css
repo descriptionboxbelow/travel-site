@@ -1,29 +1,43 @@
-.wrapper{
+.wrapper {
   overflow: hidden;
   padding-left: 1.125rem;
   padding-right: 1.125rem;
-  max-width: 77.25rem; /* 1236/16 */
-
+  max-width: 77.25rem;
+  /* 1236/16 */
   /*Use this to horizontally center*/
   margin-left: auto;
   margin-right: auto;
-
   &--medium {
-  max-width: 980px;
+    max-width: 980px;
   }
-
   &--b-margin {
-    margin-bottom: 1rem;  /* 62/16 */
+    margin-bottom: 1rem;
+    /* 62/16 */
     @mixin atSmall {
-    margin-bottom: 3.875rem;  /* 62/16 */
+      margin-bottom: 3.875rem;
+      /* 62/16 */
     }
   }
-
+  &--no-padding-until-medium {
+    padding-left: 0;
+    padding-right: 0;
+    @mixin atMedium {
+      padding-left: 1.125rem;
+      padding-right: 1.125rem;
+    }
+  }
+  &--no-padding-until-large {
+    padding-left: 0;
+    padding-right: 0;
+    @mixin atLarge {
+      padding-left: 1.125rem;
+      padding-right: 1.125rem;
+    }
+  }
   .wrapper {
     /* This will remove left & righ padding for any wrapper div inside another
     wrapper div. Enables full width images.*/
-  padding-left: 0;
-  padding-right: 0;
+    padding-left: 0;
+    padding-right: 0;
   }
-
 }

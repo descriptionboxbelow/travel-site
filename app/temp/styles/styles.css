@@ -594,20 +594,19 @@ Declaring the image as "block" removes the white lower margin we do not need.
   }
   }
 
-.wrapper{
+.wrapper {
   overflow: hidden;
   padding-left: 1.125rem;
   padding-right: 1.125rem;
-  max-width: 77.25rem; /* 1236/16 */
-
+  max-width: 77.25rem;
+  /* 1236/16 */
   /*Use this to horizontally center*/
   margin-left: auto;
   margin-right: auto;
-
 }
 
 .wrapper--medium {
-  max-width: 980px;
+    max-width: 980px;
   }
 
 .wrapper--b-margin {
@@ -619,15 +618,42 @@ Declaring the image as "block" removes the white lower margin we do not need.
 @media (min-width: 530px){
 
 .wrapper--b-margin {
-    margin-bottom: 3.875rem  /* 62/16 */
+      margin-bottom: 3.875rem
+      /* 62/16 */
+  }
+  }
+
+.wrapper--no-padding-until-medium {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+@media (min-width: 800px){
+
+.wrapper--no-padding-until-medium {
+      padding-left: 1.125rem;
+      padding-right: 1.125rem
+  }
+  }
+
+.wrapper--no-padding-until-large {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+@media (min-width: 1010px){
+
+.wrapper--no-padding-until-large {
+      padding-left: 1.125rem;
+      padding-right: 1.125rem
   }
   }
 
 .wrapper .wrapper {
     /* This will remove left & righ padding for any wrapper div inside another
     wrapper div. Enables full width images.*/
-  padding-left: 0;
-  padding-right: 0;
+    padding-left: 0;
+    padding-right: 0;
   }
 
 .page-section {
@@ -648,9 +674,38 @@ Declaring the image as "block" removes the white lower margin we do not need.
   }
 
 .page-section--testimonials {
-    background: url('/assets/images/testimonials-bg.jpg') top center no-repeat;
-    /* Shrinks or stretchs the image to perfectly cover the containing DIV */
-    background-size: cover;
+    background-color: #e0e6ef;
+  }
+
+@media (min-width: 1010px){
+
+.page-section--testimonials {
+      background: url('/assets/images/testimonials-bg.jpg') top center no-repeat;
+      /* Shrinks or stretchs the image to perfectly cover the containing DIV */
+      background-size: cover
+  }
+  }
+
+.page-section--no-b-padding-until-medium {
+    padding-bottom: 0;
+  }
+
+@media (min-width: 800px){
+
+.page-section--no-b-padding-until-medium {
+      padding: 4.5rem 0
+  }
+  }
+
+.page-section--no-b-padding-until-large {
+    padding-bottom: 0;
+  }
+
+@media (min-width: 1010px){
+
+.page-section--no-b-padding-until-large {
+      padding: 4.5rem 0
+  }
   }
 
 .headline {
@@ -746,6 +801,18 @@ Declaring the image as "block" removes the white lower margin we do not need.
     padding-right: 100px;
   }
 
+.row--gutters-small {
+    margin-right: -45px;
+  }
+
+.row--gutters-small>div {
+   padding-right: 45px;
+ }
+
+.row--t-padding {
+   padding-top: 80px;
+ }
+
 .row__b-margin-until-medium {
     margin-bottom: 1rem;
   }
@@ -771,8 +838,65 @@ Declaring the image as "block" removes the white lower margin we do not need.
     .row__medium-6 {
       float: left;
       width: 50%;
-
     }
+  }
+
+@media (min-width: 1010px){
+    .row__b-margin-until-large {
+      margin-bottom: 0rem;
+    }
+    .row__large-4 {
+      float: left;
+      width: 33.33%;
+    }
+    .row__large-4--larger {
+      width: 37%;
+    }
+    .row__large-8 {
+      float: left;
+      width: 66.66%;
+    }
+    .row__large-8--smaller {
+      width: 63%;
+    }
+    .row__large-6 {
+      float: left;
+      width: 50%;
+    }
+  }
+
+/* Begin Equal Height Rules */
+
+@media (min-width: 800px){
+
+.row--equal-height-at-medium {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex
+}
+  }
+
+.row--equal-height-at-medium > div {
+    float: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+@media (min-width: 1010px){
+
+.row--equal-height-at-large {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex
+}
+  }
+
+.row--equal-height-at-large > div {
+    float: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 
 .generic-content-container p {
@@ -883,10 +1007,19 @@ text-align: left;
 
 .testimonial {
   background-color: rgba(255, 255, 255, .8);
-  padding: 0 1.813rem 1px 1.813rem;
+  padding: 0 1.125rem 0.063rem 1.125rem;
+  /* 18/16, 1/16, 18/16 */
+  margin-bottom: 6rem;
 }
 
-/* 1/16 */
+@media (min-width: 1010px){
+
+.testimonial {
+    margin-bottom: 0;
+    padding: 0 1.813rem 0.063rem 1.813rem
+    /* 29/16, 1/16, 29/16 */
+}
+  }
 
 .testimonial__photo {
     border-radius: 50%;
@@ -898,8 +1031,6 @@ text-align: left;
     top: -80px;
     border: 6px solid rgba(255, 255, 255, .8);
   }
-
-/* 29/16 */
 
 .testimonial__title {
     color: #2f5572;
@@ -915,4 +1046,8 @@ text-align: left;
     font-weight: 400;
     text-align: center;
     margin: .25rem 0 1rem 0;
+  }
+
+.testimonial--last {
+    margin-bottom: 0;
   }
