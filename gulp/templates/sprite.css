@@ -1,0 +1,13 @@
+/* Names of variables below come from the "svg-sprite" module
+https://github.com/jkphl/svg-sprite
+*/
+
+{{#shapes}}
+ .icon--{{base}} {
+   width: {{width.outer}}px;
+   height: {{height.outer}}px;
+   /* three curly brackets so that the "/" from the generated path is not escaped */
+   background-image: url('/temp/sprite/css/{{{sprite}}}');
+   background-position: {{position.relative.xy}};
+ }
+{{/shapes}}
