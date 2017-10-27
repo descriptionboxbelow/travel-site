@@ -11,6 +11,10 @@ Declaring the image as "block" removes the white lower margin we do not need.
   }
 
   &__text-content {
+    padding-top: 88px;
+    @mixin atMedium {
+    padding-top: 60px;
+    }
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
