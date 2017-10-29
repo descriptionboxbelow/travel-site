@@ -67,22 +67,122 @@
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var $ = __webpack_require__(1);
-var Person = __webpack_require__(2);
+"use strict";
 
-alert("Allo maman");
 
-var john = new Person("John Doe", "blue");
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _Person2 = __webpack_require__(1);
+
+var _Person3 = _interopRequireDefault(_Person2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var $ = __webpack_require__(2);
+//  require is not a part of JS
+//  require is a Node.js functionality because before ES6 there was no JS native way of importing a module
+// var Person = require('./modules/Person');
+
+var Adult = function (_Person) {
+  _inherits(Adult, _Person);
+
+  function Adult() {
+    _classCallCheck(this, Adult);
+
+    return _possibleConstructorReturn(this, (Adult.__proto__ || Object.getPrototypeOf(Adult)).apply(this, arguments));
+  }
+
+  _createClass(Adult, [{
+    key: 'payTaxes',
+
+    // Method
+    value: function payTaxes() {
+      console.log(this.name + " now owes $200 in taxes.");
+    }
+  }]);
+
+  return Adult;
+}(_Person3.default);
+// alert("This is a popup");
+
+var john = new _Person3.default("John Doe", "blue");
 john.greet();
 
-var jane = new Person("Jane Plain", "teal");
+var jane = new Adult("Jane Plain", "beige");
 jane.greet();
+jane.payTaxes();
 
 $("h1").remove();
 
-
 /***/ }),
 /* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+// We'll refer to this constructor function as class even though JS doesn't support them
+// JS doesn't use classical inheritance
+// it uses prototypal inheritance, even in ECMAScript 6
+// but ES6 has added a bit of syntectitcal sugar to the language
+// that we can use to trick ourselve into thinking that JS does have classes
+
+
+// PRE-ES6 code:
+//
+// function Person(fullName, favColor) {
+//   this.name = fullName;
+//   this.favoriteColor = favColor;
+//   this.greet = function () {
+//     console.log("Hello, my name is " + this.name + " and my favorite color is " + this.favoriteColor + ".");
+//   };
+// }
+//
+// module.exports = Person;
+
+
+// ES6 translation:
+var Person = function () {
+  // constructor is a special reserved name in ES6
+  // JS knows to immediately run this function as soon as an object is created
+  function Person(fullName, favColor) {
+    _classCallCheck(this, Person);
+
+    this.name = fullName;
+    this.favoriteColor = favColor;
+  }
+
+  _createClass(Person, [{
+    key: "greet",
+    value: function greet() {
+      console.log("Hi there, my name is " + this.name + " and my favorite color is " + this.favoriteColor + ".");
+    }
+  }]);
+
+  return Person;
+}();
+
+// The Node.js' way: module.exports = Person;
+
+
+exports.default = Person;
+
+/***/ }),
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -10339,22 +10439,6 @@ if ( !noGlobal ) {
 
 return jQuery;
 } );
-
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports) {
-
-function Person(fullName, favColor) {
-  this.name = fullName;
-  this.favoriteColor = favColor;
-  this.greet = function () {
-    console.log("Hello, my name is " + this.name + " and my favorite color is " + this.favoriteColor + ".");
-  };
-}
-
-module.exports = Person;
-// module.exports = Person;
 
 
 /***/ })
