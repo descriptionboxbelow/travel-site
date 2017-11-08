@@ -1,7 +1,10 @@
 const path = require('path');
 
 module.exports = {
+  // entry, which file to look at to create its bundle
   entry: "./app/assets/scripts/app.js",
+  // output, where the final product bundled file should be output to
+  // is an object itself
   output: {
     path: path.join(__dirname, "./app/temp/scripts"),
     filename: 'App.js'

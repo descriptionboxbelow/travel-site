@@ -1257,6 +1257,10 @@ When declaring background-image, use 3x{ so that the "/" from the generated path
   }
   }
 
+.site-header__menu-content--is-visible {
+      display: block;
+    }
+
 .primary-nav--pull-right {
     float: right;
   }
