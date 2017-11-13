@@ -18,3 +18,4 @@ doing otherwise results in 'undeclared variables' bugs */
 @import "modules/_site-footer";
 @import "modules/_site-header";
 @import "modules/_primary-nav";
+@import "modules/_reveal-item";
