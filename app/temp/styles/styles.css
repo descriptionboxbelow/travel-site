@@ -1188,8 +1188,12 @@ When declaring background-image, use 3x{ so that the "/" from the generated path
 
 .site-header {
     /* using npm's "postcss-hexrgba" enables variables support */
-    background-color: rgba(47,85,114, 0.30)
+    background-color: rgba(47,85,114, 0.30);
+    position: fixed
 }
+    .site-header--dark {
+      background-color: rgba(23, 51, 72, 0.85);
+    }
   }
 
 @media (min-width: 800px){
@@ -1209,6 +1213,10 @@ When declaring background-image, use 3x{ so that the "/" from the generated path
     left: 50%;
     -webkit-transform: translateX(-50%) scale(.8);
             transform: translateX(-50%) scale(.8);
+    -webkit-transition: -webkit-transform .3s ease-out;
+    transition: -webkit-transform .3s ease-out;
+    transition: transform .3s ease-out;
+    transition: transform .3s ease-out, -webkit-transform .3s ease-out;
     -webkit-transform-origin: 50% 0%;
             transform-origin: 50% 0%;
     background-color: #2f5572;
@@ -1223,6 +1231,11 @@ When declaring background-image, use 3x{ so that the "/" from the generated path
       -webkit-transform: none;
               transform: none
   }
+
+      .site-header--dark .site-header__logo {
+         -webkit-transform: scale(.75);
+                 transform: scale(.75);
+      }
   }
 
 /*&__logo {
@@ -1429,6 +1442,10 @@ for the browser to acknowledge the z-index value */
       font-size: 1rem;
       background-color: transparent
   }
+
+      .primary-nav a.is-current-link {
+        color: #fabb69;
+      }
   }
 
 .reveal-item {
