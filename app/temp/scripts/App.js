@@ -11280,6 +11280,8 @@ var StickyHeader = function () {
   function StickyHeader() {
     _classCallCheck(this, StickyHeader);
 
+    // jquery selector to select all elements on page with class of lazyload
+    this.lazyImages = (0, _jquery2.default)(".lazyload");
     this.siteHeader = (0, _jquery2.default)(".site-header");
     // property that saves the selection (using jQuery) of our trigger element of choice
     this.headerTriggerElement = (0, _jquery2.default)(".large-hero__title");
@@ -11290,11 +11292,20 @@ var StickyHeader = function () {
     this.headerLinks = (0, _jquery2.default)(".primary-nav a");
     this.createPageSectionWaypoints();
     this.addSmoothScrolling();
+    this.refreshWaypoints();
   }
-  // create a new method to enable smooth scrolling
-
 
   _createClass(StickyHeader, [{
+    key: 'refreshWaypoints',
+    value: function refreshWaypoints() {
+      this.lazyImages.on('load', function () {
+        Waypoint.refreshAll();
+      });
+    }
+
+    // create a new method to enable smooth scrolling
+
+  }, {
     key: 'addSmoothScrolling',
     value: function addSmoothScrolling() {
       this.headerLinks.smoothScroll();

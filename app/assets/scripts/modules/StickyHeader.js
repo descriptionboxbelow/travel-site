@@ -4,6 +4,8 @@ import smoothScrool from 'jquery-smooth-scroll';
 
 class StickyHeader {
   constructor() {
+    // jquery selector to select all elements on page with class of lazyload
+    this.lazyImages = $(".lazyload");
     this.siteHeader = $(".site-header");
     // property that saves the selection (using jQuery) of our trigger element of choice
     this.headerTriggerElement = $(".large-hero__title");
@@ -14,7 +16,15 @@ class StickyHeader {
     this.headerLinks = $(".primary-nav a");
     this.createPageSectionWaypoints();
     this.addSmoothScrolling();
+    this.refreshWaypoints();
   }
+
+refreshWaypoints() {
+  this.lazyImages.on('load', function () {
+    Waypoint.refreshAll();
+  });
+}
+
   // create a new method to enable smooth scrolling
   addSmoothScrolling() {
     this.headerLinks.smoothScroll();

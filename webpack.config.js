@@ -2,12 +2,15 @@ const path = require('path');
 
 module.exports = {
   // entry, which file to look at to create its bundle
-  entry: "./app/assets/scripts/app.js",
+  entry: {
+    App: "./app/assets/scripts/App.js",
+    Vendor: "./app/assets/scripts/Vendor.js"
+  },
   // output, where the final product bundled file should be output to
   // is an object itself
   output: {
     path: path.join(__dirname, "./app/temp/scripts"),
-    filename: 'App.js'
+    filename: "[name].js"
   },
   module: {
     loaders: [
@@ -24,4 +27,4 @@ module.exports = {
       }
     ]
   }
-}
+};
