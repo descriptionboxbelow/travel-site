@@ -7,10 +7,15 @@
   /*Use this to horizontally center*/
   margin-left: auto;
   margin-right: auto;
-  
+
   &--medium {
     max-width: 980px;
   }
+
+  &--narrow{
+    max-width: 470px;
+  }
+
   &--b-margin {
     margin-bottom: 1rem;
     /* 62/16 */

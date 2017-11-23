@@ -5,7 +5,7 @@ Instead edit gulp/templates/sprite */
 https://github.com/jkphl/svg-sprite
 */
 
-/* Any code we include between 
+/* Any code we include between
 will only run once for the FIRST item that gets looped thru.
 When declaring background-image, use 3x{ so that the "/" from the generated path is not escaped  */
 
@@ -53,6 +53,10 @@ When declaring background-image, use 3x{ so that the "/" from the generated path
       width: 64px;
       height: 48px;
       background-position: 0 48.00806451612903%;
+
+      &--hoisted {
+        top: 2px;
+      }
  }
 
    .icon--rain {
