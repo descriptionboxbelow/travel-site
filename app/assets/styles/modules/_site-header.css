@@ -39,7 +39,7 @@
       transform: none;
 
       .site-header--dark & {
-         transform: scale(.75);
+         transform: scale(.73);
       }
     }
   }
